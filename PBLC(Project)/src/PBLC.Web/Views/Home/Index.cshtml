@@ -1,0 +1,181 @@
+﻿@{
+    ViewData["Title"] = "Home - PSTU Blended Learning Center";
+}
+
+<!-- Hero Section -->
+<div class="bg-primary text-white py-5 mb-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8">
+                <h1 class="display-3 fw-bold mb-3">PSTU Blended Learning Center</h1>
+                <p class="lead mb-4">আধুনিক শিক্ষা ব্যবস্থার জন্য একটি সম্পূর্ণ ডিজিটাল প্ল্যাটফর্ম</p>
+                <div class="d-flex gap-3">
+                    @if (User.Identity?.IsAuthenticated == true)
+                    {
+                        <a href="@Url.Action("Index", "Course")" class="btn btn-light btn-lg">
+                            <i class="bi bi-journal-bookmark"></i> Browse Courses
+                        </a>
+                        <a href="#quick-actions" class="btn btn-outline-light btn-lg">
+                            <i class="bi bi-lightning"></i> Quick Actions
+                        </a>
+                    }
+                    else
+                    {
+                        <a href="@Url.Action("Login", "Account")" class="btn btn-light btn-lg">
+                            <i class="bi bi-box-arrow-in-right"></i> Login
+                        </a>
+                        <a href="@Url.Action("Register", "Account")" class="btn btn-outline-light btn-lg">
+                            <i class="bi bi-person-plus"></i> Register
+                        </a>
+                    }
+                </div>
+            </div>
+            <div class="col-lg-4 text-center">
+                <i class="bi bi-laptop" style="font-size: 10rem; opacity: 0.8;"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Features Section -->
+<div class="container mb-5">
+    <h2 class="text-center mb-5">প্ল্যাটফর্মের বৈশিষ্ট্য</h2>
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm border-0">
+                <div class="card-body text-center p-4">
+                    <div class="mb-3">
+                        <i class="bi bi-book-fill text-primary" style="font-size: 3rem;"></i>
+                    </div>
+                    <h4 class="card-title">কোর্স ম্যানেজমেন্ট</h4>
+                    <p class="card-text">সম্পূর্ণ কোর্স ব্যবস্থাপনা, লেকচার আপলোড এবং ডাউনলোড সুবিধা</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm border-0">
+                <div class="card-body text-center p-4">
+                    <div class="mb-3">
+                        <i class="bi bi-file-earmark-text-fill text-success" style="font-size: 3rem;"></i>
+                    </div>
+                    <h4 class="card-title">এসাইনমেন্ট সাবমিশন</h4>
+                    <p class="card-text">অনলাইনে এসাইনমেন্ট জমা দিন এবং নম্বর পান</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm border-0">
+                <div class="card-body text-center p-4">
+                    <div class="mb-3">
+                        <i class="bi bi-chat-dots-fill text-info" style="font-size: 3rem;"></i>
+                    </div>
+                    <h4 class="card-title">Q&A ফোরাম</h4>
+                    <p class="card-text">প্রশ্ন করুন এবং উত্তর পান শিক্ষক ও সহপাঠীদের কাছ থেকে</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm border-0">
+                <div class="card-body text-center p-4">
+                    <div class="mb-3">
+                        <i class="bi bi-graph-up-arrow text-warning" style="font-size: 3rem;"></i>
+                    </div>
+                    <h4 class="card-title">পারফরম্যান্স ট্র্যাকিং</h4>
+                    <p class="card-text">আপনার পড়াশোনার অগ্রগতি এবং নম্বর ট্র্যাক করুন</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm border-0">
+                <div class="card-body text-center p-4">
+                    <div class="mb-3">
+                        <i class="bi bi-people-fill text-danger" style="font-size: 3rem;"></i>
+                    </div>
+                    <h4 class="card-title">রোল ভিত্তিক সিস্টেম</h4>
+                    <p class="card-text">Admin, Teacher এবং Student - তিন ধরনের ইউজার</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm border-0">
+                <div class="card-body text-center p-4">
+                    <div class="mb-3">
+                        <i class="bi bi-shield-check text-secondary" style="font-size: 3rem;"></i>
+                    </div>
+                    <h4 class="card-title">নিরাপদ সিস্টেম</h4>
+                    <p class="card-text">ASP.NET Identity দিয়ে সুরক্ষিত অথেন্টিকেশন</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Quick Actions Section for Logged-in Users -->
+@if (User.Identity?.IsAuthenticated == true)
+{
+    <div class="container mb-5" id="quick-actions">
+        <h2 class="text-center mb-4">Quick Actions</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card border-primary shadow-sm h-100">
+                    <div class="card-body text-center">
+                        <i class="bi bi-journal-bookmark text-primary" style="font-size: 3rem;"></i>
+                        <h5 class="card-title mt-3">Browse Courses</h5>
+                        <p class="card-text">View all available courses and enroll</p>
+                        <a href="@Url.Action("Index", "Course")" class="btn btn-primary">
+                            <i class="bi bi-arrow-right"></i> Go to Courses
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card border-success shadow-sm h-100">
+                    <div class="card-body text-center">
+                        <i class="bi bi-speedometer2 text-success" style="font-size: 3rem;"></i>
+                        <h5 class="card-title mt-3">My Dashboard</h5>
+                        <p class="card-text">View your personalized dashboard</p>
+                        <a href="@Url.Action("Dashboard", "Home")" class="btn btn-success">
+                            <i class="bi bi-arrow-right"></i> Go to Dashboard
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card border-info shadow-sm h-100">
+                    <div class="card-body text-center">
+                        <i class="bi bi-chat-dots text-info" style="font-size: 3rem;"></i>
+                        <h5 class="card-title mt-3">Q&A Forum</h5>
+                        <p class="card-text">Ask questions and get answers</p>
+                        <a href="@Url.Action("Index", "Course")" class="btn btn-info">
+                            <i class="bi bi-arrow-right"></i> Browse Forums
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<!-- Stats Section -->
+<div class="bg-light py-5">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-3 mb-4">
+                <h2 class="display-4 fw-bold text-primary">∞</h2>
+                <p class="text-muted">Unlimited Courses</p>
+            </div>
+            <div class="col-md-3 mb-4">
+                <h2 class="display-4 fw-bold text-success">24/7</h2>
+                <p class="text-muted">Available Anytime</p>
+            </div>
+            <div class="col-md-3 mb-4">
+                <h2 class="display-4 fw-bold text-info">100%</h2>
+                <p class="text-muted">Digital Platform</p>
+            </div>
+            <div class="col-md-3 mb-4">
+                <h2 class="display-4 fw-bold text-warning">⭐</h2>
+                <p class="text-muted">Modern Education</p>
+            </div>
+        </div>
+    </div>
+</div>
