@@ -226,6 +226,24 @@ After running migrations, create admin account via registration:
 - **[Class Diagram](docs/class-diagram.md)** - Object-Oriented view of system entities
 - **[ER Diagram](docs/er-diagram.md)** - Database schema with relationships
 
+#### 📷 PBLC Diagram Previews
+
+<p align="center">
+   <img src="src/PBLC.Web/wwwroot/images/logo.png" alt="PBLC Logo" width="200"/>
+   <img src="src/PBLC.Web/wwwroot/images/pstu-campus.jpg" alt="PSTU Campus" width="300"/>
+</p>
+
+**Full PDF:** [PBLC all diagram.pdf](PBLC%20all%20diagram.pdf)
+
+<details>
+<summary>Click to preview PDF (if supported by your viewer)</summary>
+
+<object data="PBLC%20all%20diagram.pdf" type="application/pdf" width="100%" height="600px">
+      <p>PDF preview not supported. <a href="PBLC%20all%20diagram.pdf">Download PDF</a>.</p>
+</object>
+
+</details>
+
 **Export to PNG/PDF:**
 ```powershell
 # Run this script to generate PNG files
