@@ -115,6 +115,23 @@ PBLC/
 - **UI:** Razor Views, Bootstrap 5
 - **File Upload:** IFormFile with server-side storage
 
+## 🧩 এই প্রজেক্টে যা যা ব্যবহার করা হয়েছে
+
+- **Programming Language:** C#
+- **Framework:** ASP.NET Core 9.0 MVC
+- **Database:** MySQL (বা LocalDB)
+- **ORM:** Entity Framework Core 9.0
+- **Authentication:** ASP.NET Core Identity
+- **UI Design:** Razor Views, Bootstrap 5
+- **File Upload:** IFormFile (server-side)
+- **Diagram:** Class Diagram, ER Diagram (PDF/PNG)
+- **Version Control:** Git & GitHub
+- **IDE:** Visual Studio 2022 / VS Code
+- **Documentation:** Markdown (.md) files
+- **Other Tools:** PowerShell script (export-diagrams-to-png.ps1)
+
+সব মিলিয়ে, এই প্রজেক্টটি modern ASP.NET Core MVC architecture, Entity Framework, Bootstrap, এবং MySQL/SQL Server ব্যবহার করে বানানো হয়েছে।
+
 ## 📦 Database Schema
 
 ### Core Tables
